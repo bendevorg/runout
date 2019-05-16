@@ -44,9 +44,8 @@ GameObject:
   - component: {fileID: 8290217820300624631}
   - component: {fileID: 8290217820293639325}
   - component: {fileID: 8290217821496322440}
-  - component: {fileID: 8290217821496321655}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Rifleman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +78,7 @@ Animator:
   m_GameObject: {fileID: 8290217820300926679}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e466ed130391c47618b80d78f439bc0b, type: 3}
-  m_Controller: {fileID: 9100000, guid: cbba3e169b67f4b88ace77b3fbb70feb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7330930e7da4a4b55b2ca7d869fce0f8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,22 +105,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &8290217821496321655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8290217820300926679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca2fc95611174a82910f27b81f3c628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 0.1
-  movementSpeed: 5
-  playerCamera: {fileID: 0}
-  canMove: 1
 --- !u!1 &8290217820300926681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,7 +2196,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28a2e1a1267a441599eea591d165033b, type: 2}
+  - {fileID: 2100000, guid: 64edd3f180a7046c0b03f4251744d497, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2345,7 +2328,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2ea11c9274ac44be895fc8be0f6db88, type: 2}
+  - {fileID: 2100000, guid: f0128a8c39d2345cfa2761fb7c740246, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
