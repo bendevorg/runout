@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
 public class MovementInput : MonoBehaviour {
 
