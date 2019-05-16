@@ -24,8 +24,8 @@ public class MovementInput : MonoBehaviour {
 
 	void Start () {
     //  TODO: Remove this and put in a future game manager
-    Cursor.visible = false;
-    Cursor.lockState = CursorLockMode.Locked;
+    // Cursor.visible = false;
+    // Cursor.lockState = CursorLockMode.Locked;
 
 		animator = this.GetComponent<Animator>();
 		playerCamera = Camera.main;
@@ -63,12 +63,15 @@ public class MovementInput : MonoBehaviour {
 	}
 
   private void Rotate() {
-    if (moveDirection.magnitude != 0) {
-      transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), rotationSpeed);
-    }
+    transform.rotation = Quaternion.Lerp(
+      transform.rotation, 
+      new Quaternion(0, playerCamera.transform.rotation.y, 0, playerCamera.transform.rotation.w),
+      rotationSpeed
+    );
   }
 
   private void Animate() {
-    animator.SetFloat("Speed", moveDirection.sqrMagnitude);
+    animator.SetFloat("SpeedX", inputX);
+    animator.SetFloat("SpeedY", inputZ);
   }
 }
