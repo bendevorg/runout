@@ -63,7 +63,9 @@ public class MovementInput : MonoBehaviour {
 	}
 
   private void Rotate() {
-    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), rotationSpeed);
+    if (moveDirection.magnitude != 0) {
+      transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), rotationSpeed);
+    }
   }
 
   private void Animate() {
