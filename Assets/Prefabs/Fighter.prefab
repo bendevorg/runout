@@ -44,7 +44,9 @@ GameObject:
   - component: {fileID: 8290217820300624631}
   - component: {fileID: 8290217820293639325}
   - component: {fileID: 8290217821496322440}
-  - component: {fileID: 8433034161479404930}
+  - component: {fileID: 366403790}
+  - component: {fileID: 366403794}
+  - component: {fileID: 6535858272003499798}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Untagged
@@ -106,7 +108,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &8433034161479404930
+--- !u!114 &366403790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,11 +117,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 8290217820300926679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34aeda16c001476781d9c526c5e4a48, type: 3}
+  m_Script: {fileID: 11500000, guid: bf559be01231c4c1489d8d9f9d40be8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 0
-  delayBetweenAttacks: 1
+  delayBetweenAttacks: 0
+  target: {fileID: 0}
+  hasTarget: 0
+  attackDistanceThreshold: 0.5
+  myCollisionRadius: 0
+  targetCollisionRadius: 0
+--- !u!114 &366403794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290217820300926679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9094f6a32ad40a1850e8612ed3059a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.1
+  movementSpeed: 3
+--- !u!136 &6535858272003499798
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290217820300926679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8290217820300926681
 GameObject:
   m_ObjectHideFlags: 0
