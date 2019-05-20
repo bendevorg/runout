@@ -2,15 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Enemy : LivingEntity {
 
-  // Start is called before the first frame update
+  public enum State {Idle, Chasing, Attacking};
+  State currentState;
+
+  public float delayBetweenAttacks;
+
+  private Animator animator;
+
   void Start() {
-
+    animator = this.GetComponent<Animator>();
   }
 
-  // Update is called once per frame
   void Update() {
-
+    if (Input.GetKeyDown(KeyCode.M)) {
+      // animator.SetFloat("HitValue", Random.Range(0, 2));
+      // animator.SetTrigger("Hit");
+      StartCoroutine("Attack");
+    }
   }
+  
+  IEnumerator Attack() {
+    currentState = State.Attacking;
+    animator.SetTrigger("Attack");
+    float timePassed = 0f;
+
+    while (timePassed < delayBetweenAttacks) {
+      timePassed += Time.deltaTime;
+      yield return null;
+    }
+
+    currentState = State.Chasing;
+  }
+
 }
