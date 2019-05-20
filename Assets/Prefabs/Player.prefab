@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8290217820293639325}
   - component: {fileID: 8290217821496322440}
   - component: {fileID: 8290217821496321655}
+  - component: {fileID: 199120278}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -122,6 +123,20 @@ MonoBehaviour:
   movementSpeed: 5
   playerCamera: {fileID: 0}
   canMove: 1
+--- !u!136 &199120278
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290217820300926679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &8290217820300926681
 GameObject:
   m_ObjectHideFlags: 0
