@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour {
   public void Move(Vector3 moveDirection) {
     characterController.Move(moveDirection.normalized * Time.deltaTime * movementSpeed);
     Animate(moveDirection.x, Mathf.Abs(moveDirection.z));
-	}
+  }
 
   public void Rotate(Vector3 target) {
     // transform.rotation = Quaternion.Lerp(

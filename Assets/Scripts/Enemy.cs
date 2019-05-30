@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Enemy : LivingEntity {
 
-  public enum State {Idle, Chasing, Attacking};
+  public enum State { Idle, Chasing, Attacking }
   State currentState;
   public float delayBetweenAttacks;
-  
+
   [HideInInspector]
   public Transform target;
   LivingEntity targetEntity;
@@ -18,20 +18,20 @@ public class Enemy : LivingEntity {
   [HideInInspector]
   public float myCollisionRadius;
   [HideInInspector]
-	public float targetCollisionRadius;
+  public float targetCollisionRadius;
 
   private Animator animator;
 
   void Awake() {
-    if (GameObject.FindGameObjectWithTag ("Player") != null) {
-			hasTarget = true;
-			
-			target = GameObject.FindGameObjectWithTag ("Player").transform;
-			targetEntity = target.GetComponent<LivingEntity> ();
-			
-			myCollisionRadius = GetComponent<CapsuleCollider>().radius;
-			targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
-		}
+    if (GameObject.FindGameObjectWithTag("Player") != null) {
+      hasTarget = true;
+
+      target = GameObject.FindGameObjectWithTag("Player").transform;
+      targetEntity = target.GetComponent<LivingEntity>();
+
+      myCollisionRadius = GetComponent<CapsuleCollider>().radius;
+      targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
+    }
   }
 
   protected virtual void Start() {
@@ -45,7 +45,7 @@ public class Enemy : LivingEntity {
       StartCoroutine("Attack");
     }
   }
-  
+
   public IEnumerator Attack() {
     currentState = State.Attacking;
     animator.SetTrigger("Attack");

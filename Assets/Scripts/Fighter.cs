@@ -16,7 +16,7 @@ public class Fighter : Enemy {
   void Update() {
     if (hasTarget) {
       float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
-      if (sqrDstToTarget < Mathf.Pow (attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
+      if (sqrDstToTarget < Mathf.Pow(attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
         StartCoroutine(Attack());
       } else {
         moveDirection = (target.position - transform.position).normalized;
