@@ -23,8 +23,8 @@ public class MovementInput : MonoBehaviour {
 
   void Start() {
     //  TODO: Remove this and put in a future game manager
-    // Cursor.visible = false;
-    // Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+    Cursor.lockState = CursorLockMode.Locked;
 
     animator = this.GetComponent<Animator>();
     playerCamera = Camera.main;
