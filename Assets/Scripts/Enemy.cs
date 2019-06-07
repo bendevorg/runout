@@ -8,7 +8,6 @@ public class Enemy : LivingEntity {
   public enum State { Idle, Chasing, Attacking }
   public State currentState;
   public float delayBetweenAttacks;
-  public bool canMove = true;
 
   [HideInInspector]
   public Transform target;
@@ -22,6 +21,8 @@ public class Enemy : LivingEntity {
   public float targetCollisionRadius;
 
   private Animator animator;
+
+  public MeshCollider weaponCollider;
 
   void Awake() {
     if (GameObject.FindGameObjectWithTag("Player") != null) {
@@ -41,7 +42,6 @@ public class Enemy : LivingEntity {
 
   public IEnumerator Attack() {
     currentState = State.Attacking;
-    canMove = false;
     animator.SetTrigger("Attack");
     float timePassed = 0f;
 
@@ -51,7 +51,12 @@ public class Enemy : LivingEntity {
     }
   }
 
+  public void activateWeaponCollider() {
+    weaponCollider.enabled = true;
+  }
+
   public void EndAttack() {
     currentState = State.Chasing;
+    weaponCollider.enabled = false;
   }
 }

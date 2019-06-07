@@ -436,7 +436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.10152938, y: 0, z: 0, w: 0.9948326}
+  m_LocalRotation: {x: 0.10153101, y: 0, z: 0, w: 0.9948324}
   m_LocalPosition: {x: 19.69, y: 2.5, z: 10.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -495,12 +495,12 @@ MonoBehaviour:
   startingHealth: 0
   currentState: 0
   delayBetweenAttacks: 0
-  canMove: 1
   target: {fileID: 0}
   hasTarget: 0
   attackDistanceThreshold: 0.5
   myCollisionRadius: 0
   targetCollisionRadius: 0
+  weaponCollider: {fileID: 0}
 --- !u!1001 &618922890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -570,6 +570,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f8a0847dbcc49d99f4e786be0f12b9, type: 3}
+--- !u!1 &839491872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6283240442617783731, guid: 7ae893b58ccfc401190d581fde9a61ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 4810087830259716320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &839491873
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839491872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2432090755550338912, guid: 7cc82a24296fa4a8199b6dcb007e1ec3, type: 3}
 --- !u!4 &860078975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290217820300624631, guid: 5e8134fd71f2941bdb2efac33f33e6cc,
@@ -880,32 +900,32 @@ PrefabInstance:
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.101529524
+      value: -0.101530015
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011982796
+      value: -0.0000000011982937
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9948326
+      value: -0.9948325
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08348938
+      value: -0.08348925
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000006233025
+      value: 0.000000062329605
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000003426543
+      value: 0.000000034265117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0ba926fbe42e1924d1fb417a53f1, type: 3}
@@ -975,6 +995,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366403790, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: weaponCollider
+      value: 
+      objectReference: {fileID: 839491873}
+    - target: {fileID: 366403794, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: hasTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283240442617783731, guid: 7ae893b58ccfc401190d581fde9a61ee,
+        type: 3}
+      propertyPath: m_Name
+      value: sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
