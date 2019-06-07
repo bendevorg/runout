@@ -53,6 +53,7 @@
     "Temp/": true
   },
   "csharp.referencesCodeLens.enabled": false,
+  "csharpfixformat.style.newline.atEnd": true,
   "csharpfixformat.style.spaces.beforeParenthesis": false,
   "[csharp]": {
     "editor.defaultFormatter": "Leopotam.csharpfixformat"
