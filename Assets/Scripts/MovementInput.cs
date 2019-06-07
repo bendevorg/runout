@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(CharacterController))]
+// [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 public class MovementInput : MonoBehaviour {
 
   private float inputX;
@@ -16,7 +17,7 @@ public class MovementInput : MonoBehaviour {
   public Camera playerCamera;
 
   private Animator animator;
-  private CharacterController characterController;
+  private Rigidbody rb;
 
   [HideInInspector]
   public bool canMove = true;
@@ -28,13 +29,18 @@ public class MovementInput : MonoBehaviour {
 
     animator = this.GetComponent<Animator>();
     playerCamera = Camera.main;
-    characterController = this.GetComponent<CharacterController>();
+    rb = this.GetComponent<Rigidbody>();
   }
 
   void Update() {
     if (canMove) {
       ReadInput();
       CalculateMovementIntent();
+    }
+  }
+
+  void FixedUpdate() {
+    if (canMove) {
       Move();
       Rotate();
       Animate();
@@ -58,7 +64,7 @@ public class MovementInput : MonoBehaviour {
   }
 
   private void Move() {
-    characterController.Move(moveDirection.normalized * Time.deltaTime * movementSpeed);
+    rb.MovePosition(transform.position + (moveDirection.normalized * Time.deltaTime * movementSpeed));
   }
 
   private void Rotate() {

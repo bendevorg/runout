@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyMovement : MonoBehaviour {
 
   public float rotationSpeed = 0.1f;
   public float movementSpeed = 3f;
-  CharacterController characterController;
+  Rigidbody rb;
 
   Animator animator;
 
   new void Start() {
-    characterController = this.GetComponent<CharacterController>();
+    rb = this.GetComponent<Rigidbody>();
     animator = this.GetComponent<Animator>();
   }
 
   public void Move(Vector3 moveDirection) {
-    characterController.Move(moveDirection.normalized * Time.deltaTime * movementSpeed);
+    rb.MovePosition(transform.position + (moveDirection.normalized * Time.deltaTime * movementSpeed));
     Animate(moveDirection.x, Mathf.Abs(moveDirection.z));
   }
 

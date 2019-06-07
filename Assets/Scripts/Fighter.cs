@@ -13,7 +13,7 @@ public class Fighter : Enemy {
     movement = this.GetComponent<EnemyMovement>();
   }
 
-  void Update() {
+  void FixedUpdate() {
     if (hasTarget) {
       float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
       if (currentState != State.Attacking &&
@@ -26,9 +26,5 @@ public class Fighter : Enemy {
       }
       movement.Rotate(target.position);
     }
-  }
-
-  void FixedUpdate() {
-
   }
 }
