@@ -19,8 +19,8 @@ public class WeaponCollision : MonoBehaviour {
           4f,
           layerMask
         )) {
-        Debug.Log("Hit");
         hitPoint = hit.point;
+        other.GetComponent<LivingEntity>().TakeHit(damage, hitPoint, transform.forward);
       }
     }
   }
