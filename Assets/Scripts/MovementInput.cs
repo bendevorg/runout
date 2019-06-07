@@ -18,6 +18,7 @@ public class MovementInput : MonoBehaviour {
 
   private Animator animator;
   private Rigidbody rb;
+  private LivingEntity livingEntity;
 
   [HideInInspector]
   public bool canMove = true;
@@ -30,6 +31,8 @@ public class MovementInput : MonoBehaviour {
     animator = this.GetComponent<Animator>();
     playerCamera = Camera.main;
     rb = this.GetComponent<Rigidbody>();
+    livingEntity = this.GetComponent<LivingEntity>();
+    livingEntity.OnHit += Knockback;
   }
 
   void Update() {
@@ -73,6 +76,11 @@ public class MovementInput : MonoBehaviour {
       new Quaternion(0, playerCamera.transform.rotation.y, 0, playerCamera.transform.rotation.w),
       rotationSpeed
     );
+  }
+
+  public void Knockback(float _damage, Vector3 hitPoint, Vector3 hitDirection) {
+    Debug.Log("Knockback");
+    rb.AddForceAtPosition(10f * hitDirection, hitPoint, ForceMode.Impulse);
   }
 
   private void Animate() {

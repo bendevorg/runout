@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class LivingEntity : MonoBehaviour, IDamageable {
 
-	Rigidbody rb;
-
-	void Start() {
-		rb = this.GetComponent<Rigidbody>();
-	}
+	public delegate void TookHit(float _damage, Vector3 hitPoint, Vector3 hitDirection);
+	public event TookHit OnHit;
 
 	public float damage { get; protected set; }
 
 	public virtual void TakeHit(float _damage, Vector3 hitPoint, Vector3 hitDirection) {
 		TakeDamage(_damage);
-		TakeKnockback(hitPoint, hitDirection);
+		OnHit(_damage, hitPoint, hitDirection);
 	}
 
 	public virtual void TakeDamage(float _damage) {
@@ -26,9 +22,10 @@ public class LivingEntity : MonoBehaviour, IDamageable {
 		// }
 	}
 
-	public virtual void TakeKnockback(Vector3 hitPoint, Vector3 hitDirection) {
-		Debug.Log("Knockback");
-		// rb.AddForceAtPosition(-transform.forward * 1000f, hitPoint, ForceMode.Impulse);
-		// rb.AddForce(-transform.forward * 100f, ForceMode.Impulse);
-	}
+	// public virtual void TakeKnockback(Vector3 hitPoint, Vector3 hitDirection) {
+	// 	Debug.Log("Knockback");
+	// 	Debug.Log(rb);
+	// 	rb.AddForceAtPosition(-transform.forward * 1000f, hitPoint, ForceMode.Impulse);
+	// 	// rb.AddForce(-transform.forward * 100f, ForceMode.Impulse);
+	// }
 }
