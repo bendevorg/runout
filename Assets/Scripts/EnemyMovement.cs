@@ -4,17 +4,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : Enemy {
 
   public float rotationSpeed = 0.1f;
   public float movementSpeed = 3f;
   CharacterController characterController;
+  Enemy controller;
 
   Animator animator;
 
-  void Start() {
+  new void Start() {
     characterController = this.GetComponent<CharacterController>();
     animator = this.GetComponent<Animator>();
+    controller = this.GetComponent<Enemy>();
   }
 
   public void Move(Vector3 moveDirection) {

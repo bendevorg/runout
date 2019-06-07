@@ -6,8 +6,9 @@ using UnityEngine;
 public class Enemy : LivingEntity {
 
   public enum State { Idle, Chasing, Attacking }
-  State currentState;
+  public State currentState;
   public float delayBetweenAttacks;
+  public bool canMove = true;
 
   [HideInInspector]
   public Transform target;
@@ -38,16 +39,9 @@ public class Enemy : LivingEntity {
     animator = this.GetComponent<Animator>();
   }
 
-  void Update() {
-    if (Input.GetKeyDown(KeyCode.M)) {
-      // animator.SetFloat("HitValue", Random.Range(0, 2));
-      // animator.SetTrigger("Hit");
-      StartCoroutine("Attack");
-    }
-  }
-
   public IEnumerator Attack() {
     currentState = State.Attacking;
+    canMove = false;
     animator.SetTrigger("Attack");
     float timePassed = 0f;
 
@@ -55,8 +49,9 @@ public class Enemy : LivingEntity {
       timePassed += Time.deltaTime;
       yield return null;
     }
-
-    currentState = State.Chasing;
   }
 
+  public void EndAttack() {
+    currentState = State.Chasing;
+  }
 }

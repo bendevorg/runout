@@ -16,9 +16,11 @@ public class Fighter : Enemy {
   void Update() {
     if (hasTarget) {
       float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
-      if (sqrDstToTarget < Mathf.Pow(attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
+      if (currentState != State.Attacking &&
+        sqrDstToTarget < Mathf.Pow(attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)
+      ) {
         StartCoroutine(Attack());
-      } else {
+      } else if (currentState != State.Attacking) {
         moveDirection = (target.position - transform.position).normalized;
         movement.Move(moveDirection);
       }
@@ -29,5 +31,4 @@ public class Fighter : Enemy {
   void FixedUpdate() {
 
   }
-
 }
