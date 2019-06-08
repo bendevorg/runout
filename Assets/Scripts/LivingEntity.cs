@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable {
 
-	public delegate void TookHit(float _damage, Vector3 hitPoint, Vector3 hitDirection);
+	public delegate void TookHit(float damage, float weight, Vector3 hitPoint, Vector3 hitDirection);
 	public event TookHit OnHit;
 
-	public float damage { get; protected set; }
+	public float damage { get; protected set; } = 0f;
+	public float weight = 3f;
 
 	public virtual void TakeHit(float _damage, Vector3 hitPoint, Vector3 hitDirection) {
 		TakeDamage(_damage);
-		OnHit(_damage, hitPoint, hitDirection);
+		OnHit(damage, weight, hitPoint, hitDirection);
 	}
 
 	public virtual void TakeDamage(float _damage) {
