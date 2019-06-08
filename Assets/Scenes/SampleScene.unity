@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34aeda16c001476781d9c526c5e4a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 10
   currentState: 0
   delayBetweenAttacks: 0
   target: {fileID: 0}
@@ -894,12 +895,12 @@ PrefabInstance:
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10152936
+      value: -0.101529524
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011981564
+      value: -0.0000000011981643
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
@@ -914,12 +915,12 @@ PrefabInstance:
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000062326244
+      value: 0.000000062326144
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000034263447
+      value: 0.000000034263397
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0ba926fbe42e1924d1fb417a53f1, type: 3}
