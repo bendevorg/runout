@@ -43,6 +43,7 @@ public class Enemy : LivingEntity {
   public IEnumerator Attack() {
     currentState = State.Attacking;
     animator.SetTrigger("Attack");
+    weapon.attackTrails.SetActive(true);
     float timePassed = 0f;
 
     while (timePassed < delayBetweenAttacks) {
@@ -58,5 +59,6 @@ public class Enemy : LivingEntity {
   public void EndAttack() {
     currentState = State.Chasing;
     weapon.collider.enabled = false;
+    weapon.attackTrails.SetActive(false);
   }
 }

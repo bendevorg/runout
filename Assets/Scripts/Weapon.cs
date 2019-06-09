@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour {
   public BoxCollider collider;
   public LayerMask layerMask;
   public float damage = 15f;
+  public GameObject attackTrails;
 
   Vector3 hitPoint;
 
