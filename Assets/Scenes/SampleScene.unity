@@ -895,12 +895,12 @@ PrefabInstance:
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.101529524
+      value: -0.10152936
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011971628
+      value: -0.00000000119699
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
@@ -915,12 +915,12 @@ PrefabInstance:
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000006229054
+      value: 0.00000006228478
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000034245584
+      value: 0.000000034242703
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0ba926fbe42e1924d1fb417a53f1, type: 3}
@@ -990,6 +990,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873078078, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873078081, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873078081, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: TrailModule.minVertexDistance
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873078081, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
