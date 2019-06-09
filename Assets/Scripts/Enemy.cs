@@ -22,7 +22,7 @@ public class Enemy : LivingEntity {
 
   private Animator animator;
 
-  public MeshCollider weaponCollider;
+  public Weapon weapon;
 
   void Awake() {
     if (GameObject.FindGameObjectWithTag("Player") != null) {
@@ -52,11 +52,11 @@ public class Enemy : LivingEntity {
   }
 
   public void activateWeaponCollider() {
-    weaponCollider.enabled = true;
+    weapon.collider.enabled = true;
   }
 
   public void EndAttack() {
     currentState = State.Chasing;
-    weaponCollider.enabled = false;
+    weapon.collider.enabled = false;
   }
 }

@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponCollision : MonoBehaviour {
+[RequireComponent(typeof(BoxCollider))]
+public class Weapon : MonoBehaviour {
 
+  [HideInInspector]
+  public BoxCollider collider;
   public LayerMask layerMask;
   public float damage = 15f;
 
-  public Vector3 hitPoint;
+  Vector3 hitPoint;
+
+  void Start() {
+    collider = this.GetComponent<BoxCollider>();
+  }
 
   private void OnTriggerEnter(Collider other) {
     if (other.CompareTag("Player")) {

@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour {
 
   Animator animator;
 
-  new void Start() {
+  void Start() {
     rb = this.GetComponent<Rigidbody>();
     animator = this.GetComponent<Animator>();
   }
