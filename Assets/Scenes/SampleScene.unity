@@ -975,27 +975,27 @@ PrefabInstance:
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000006226425
+      value: 0.0000000622642
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650403883428, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000003423245
+      value: 0.000000034232425
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10152936
+      value: -0.10152985
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011964127
+      value: -0.0000000011964435
       objectReference: {fileID: 0}
     - target: {fileID: 2342706650878682511, guid: b3ca0ba926fbe42e1924d1fb417a53f1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9948326
+      value: -0.9948325
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0ba926fbe42e1924d1fb417a53f1, type: 3}
@@ -1010,6 +1010,22 @@ PrefabInstance:
       propertyPath: attackTrails
       value: 
       objectReference: {fileID: 1572317379}
+    - target: {fileID: 109752178, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109752178, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: m_Center.y
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 109752178, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: m_Size.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 109752178, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
+      propertyPath: m_Size.x
+      value: 0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 366403790, guid: 7ae893b58ccfc401190d581fde9a61ee, type: 3}
       propertyPath: weapon
       value: 
@@ -1146,6 +1162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290217820300926682, guid: 5e8134fd71f2941bdb2efac33f33e6cc,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8290217821496321655, guid: 5e8134fd71f2941bdb2efac33f33e6cc,
         type: 3}

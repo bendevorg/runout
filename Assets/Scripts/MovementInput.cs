@@ -79,8 +79,7 @@ public class MovementInput : MonoBehaviour {
   }
 
   public void Knockback(float damage, float weight, Vector3 hitPoint, Vector3 hitDirection) {
-    Debug.Log("Hit");
-    rb.AddForceAtPosition((damage / 2.75f) * new Vector3(-hitDirection.x / weight, .15f / weight, hitDirection.z / weight), hitPoint, ForceMode.Impulse);
+    rb.AddForceAtPosition((damage / 2.75f) * new Vector3(hitDirection.x / weight, .15f / weight, hitDirection.z / weight), hitPoint, ForceMode.Impulse);
   }
 
   private void Animate() {
