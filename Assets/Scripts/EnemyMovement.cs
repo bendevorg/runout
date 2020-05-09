@@ -18,8 +18,15 @@ public class EnemyMovement : MonoBehaviour {
   }
 
   public void Move(Vector3 moveDirection) {
+    ApplyGravity();
     characterController.Move(moveDirection.normalized * Time.deltaTime * movementSpeed);
     Animate(moveDirection.x, Mathf.Abs(moveDirection.z));
+  }
+
+  private void ApplyGravity() {
+    if (!characterController.isGrounded) {
+      characterController.Move(GameManager.gameManager.gravity * -1 * Time.deltaTime);
+    }
   }
 
   public void Rotate(Vector3 target) {

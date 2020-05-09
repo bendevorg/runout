@@ -32,12 +32,19 @@ public class MovementInput : MonoBehaviour {
   }
 
   void Update() {
+    ApplyGravity();
     if (canMove) {
       ReadInput();
       CalculateMovementIntent();
       Move();
       Rotate();
       Animate();
+    }
+  }
+
+  private void ApplyGravity() {
+    if (!characterController.isGrounded) {
+      characterController.Move(GameManager.gameManager.gravity * -1 * Time.deltaTime);
     }
   }
 
