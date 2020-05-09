@@ -13,21 +13,18 @@ public class Fighter : Enemy {
     movement = this.GetComponent<EnemyMovement>();
   }
 
-  void Update() {
+  void FixedUpdate() {
     if (hasTarget) {
       float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
-      if (sqrDstToTarget < Mathf.Pow(attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)) {
+      if (currentState != State.Attacking &&
+        sqrDstToTarget < Mathf.Pow(attackDistanceThreshold + myCollisionRadius + targetCollisionRadius, 2)
+      ) {
         StartCoroutine(Attack());
-      } else {
+      } else if (currentState != State.Attacking) {
         moveDirection = (target.position - transform.position).normalized;
         movement.Move(moveDirection);
       }
       movement.Rotate(target.position);
     }
   }
-
-  void FixedUpdate() {
-
-  }
-
 }

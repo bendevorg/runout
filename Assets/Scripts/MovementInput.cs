@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(CharacterController))]
+// [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 public class MovementInput : MonoBehaviour {
 
   private float inputX;
@@ -16,7 +17,8 @@ public class MovementInput : MonoBehaviour {
   public Camera playerCamera;
 
   private Animator animator;
-  private CharacterController characterController;
+  private Rigidbody rb;
+  private LivingEntity livingEntity;
 
   [HideInInspector]
   public bool canMove = true;
@@ -28,13 +30,20 @@ public class MovementInput : MonoBehaviour {
 
     animator = this.GetComponent<Animator>();
     playerCamera = Camera.main;
-    characterController = this.GetComponent<CharacterController>();
+    rb = this.GetComponent<Rigidbody>();
+    livingEntity = this.GetComponent<LivingEntity>();
+    livingEntity.OnHit += Knockback;
   }
 
   void Update() {
     if (canMove) {
       ReadInput();
       CalculateMovementIntent();
+    }
+  }
+
+  void FixedUpdate() {
+    if (canMove) {
       Move();
       Rotate();
       Animate();
@@ -58,7 +67,7 @@ public class MovementInput : MonoBehaviour {
   }
 
   private void Move() {
-    characterController.Move(moveDirection.normalized * Time.deltaTime * movementSpeed);
+    rb.MovePosition(transform.position + (moveDirection.normalized * Time.deltaTime * movementSpeed));
   }
 
   private void Rotate() {
@@ -67,6 +76,10 @@ public class MovementInput : MonoBehaviour {
       new Quaternion(0, playerCamera.transform.rotation.y, 0, playerCamera.transform.rotation.w),
       rotationSpeed
     );
+  }
+
+  public void Knockback(float damage, float weight, Vector3 hitPoint, Vector3 hitDirection) {
+    rb.AddForceAtPosition((damage / 2.75f) * new Vector3(hitDirection.x / weight, .15f / weight, hitDirection.z / weight), hitPoint, ForceMode.Impulse);
   }
 
   private void Animate() {
