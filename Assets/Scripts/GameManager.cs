@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
   public static GameManager gameManager = null;
-  public Vector3 gravity;
 
   void Awake() {
     if (gameManager != null) {
